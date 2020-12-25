@@ -91,6 +91,8 @@ function App() {
             );
             dispatch(setAuth('token'));
             break;
+          } else {
+            errorAnimation(1, 200);
           }
         }
       }

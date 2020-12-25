@@ -43,7 +43,7 @@ function App({route, navigation}: any) {
                   !values.query
                     ? data
                     : data.filter(
-                        (post) =>
+                        (post: {title: string; body: string}) =>
                           post.title.search(
                             new RegExp(`${values.query.trim()}`, 'i'),
                           ) >= 0 ||
