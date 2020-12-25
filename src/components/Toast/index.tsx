@@ -10,7 +10,7 @@ export default function showToast(
 ) {
   Toast.show({
     type,
-    position: 'top',
+    position: 'bottom',
     text1: 'Attention',
     text2: message,
     visibilityTime: duration,

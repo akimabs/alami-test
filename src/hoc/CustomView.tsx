@@ -3,27 +3,30 @@ import {View, StyleSheet} from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import {Header} from '../components/index';
-import {colors} from '../themes/';
+import {colors} from '../themes';
 
 type PropsHoc = {
-  title: string;
+  title?: string;
   backAction?: boolean;
+  withHeader?: boolean;
 };
 
-const WithHoc = (
+const CustomView = (
   WrappedComponent: React.FunctionComponent,
-  {title, backAction = true}: PropsHoc,
+  {title, backAction = true, withHeader = true}: PropsHoc,
 ) => {
   return (props: any) => (
     <View style={styles.container}>
-      <Header backAction={backAction} title={title} titleColor="white" />
-      <Toast ref={(ref) => Toast.setRef(ref)} />
+      {withHeader && (
+        <Header backAction={backAction} title={title} titleColor="white" />
+      )}
       <WrappedComponent {...props} />
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </View>
   );
 };
 
-export {WithHoc};
+export {CustomView};
 
 const styles = StyleSheet.create({
   container: {

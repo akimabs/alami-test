@@ -1,6 +1,6 @@
 const colors = {
-  primary: '#D40E00',
-  primary2: '#C4201A',
+  primary: '#0d6081',
+  primary2: '#0a506b',
   white: '#FFFFFF',
   black1: '#000',
   black2: '#4B4F71',
@@ -11,9 +11,9 @@ const colors = {
   gray5: '#8f8f8f',
   backgroundColor: '#F1F1F1',
   info: '#62B1F6',
-  success: '#1A9D82',
+  success: '#18ba9c',
   danger: '#d9534f',
-  warning: '#ce7249',
+  warning: '#e0a631',
   warning2: '#ffbb33',
   dark: '#000',
   dark2: '#393939',
@@ -30,6 +30,12 @@ const sizes = {
 
 const images = {
   pattern: require('../assets/images/pattern.png'),
+  OnBoarding: {
+    image1: require('../assets/images/onboarding-1.png'),
+    image2: require('../assets/images/onboarding-2.png'),
+    image3: require('../assets/images/onboarding-3.png'),
+  },
+  logo: require('../assets/images/logo.png'),
 };
 
 export {colors, sizes, images};

@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   View,
   Platform,
+  ColorValue,
 } from 'react-native';
 import Text from '../Text';
 
@@ -19,6 +20,7 @@ type PropsButton = {
   withOutRipple?: boolean;
   withOutAnimate?: boolean;
   disable?: boolean;
+  rippleColor?: ColorValue;
 };
 
 const Button: React.FC<PropsButton> = ({
@@ -30,6 +32,7 @@ const Button: React.FC<PropsButton> = ({
   withOutRipple = false,
   withOutAnimate = false,
   disable = false,
+  rippleColor,
 }) => {
   const [state] = React.useState({
     animated: new Animated.Value(1),
@@ -107,6 +110,10 @@ const Button: React.FC<PropsButton> = ({
           useForeground={true}
           onPressIn={inAnimate}
           onPressOut={outAnimate}
+          background={TouchableNativeFeedback.Ripple(
+            rippleColor ? rippleColor : '#FFFFFF20',
+            true,
+          )}
           onPress={onPress}>
           {withOutAnimate ? (
             <Animated.View style={[types, style]}>
